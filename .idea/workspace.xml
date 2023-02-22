@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="267b9174-ec63-4cd9-8b1a-459d214ec1ad" name="Changes" comment="se confirma que el nuevo repositorio corr con los mismos archivos del repositorios eliminado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/tallerunibanco_1/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/tallerunibanco_1/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677095026774</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="se confirma que el nuevo repositorio corr con los mismos archivos del repositorios eliminado">
+      <created>1677096289266</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677096289266</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,6 +98,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="se crea un nuevo respositorio con las mismas carpetas, el anterior dejo de funcionar y no encontramos solucion" />
+    <MESSAGE value="Se agregaron los id y los onAction" />
     <MESSAGE value="se confirma que el nuevo repositorio corr con los mismos archivos del repositorios eliminado" />
     <option name="LAST_COMMIT_MESSAGE" value="se confirma que el nuevo repositorio corr con los mismos archivos del repositorios eliminado" />
   </component>
