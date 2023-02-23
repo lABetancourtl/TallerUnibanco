@@ -1,7 +1,5 @@
 package co.edu.uniquindio.tallerunibanco_1;
 
-import co.edu.uniquindio.tallerunibanco_1.controllers.HelloController;
-import co.edu.uniquindio.tallerunibanco_1.modelo.Banco;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

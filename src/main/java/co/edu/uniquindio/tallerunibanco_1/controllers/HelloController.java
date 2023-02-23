@@ -51,6 +51,8 @@ public class HelloController {
     private Button btActualizar;
 
     @FXML
+    private Button btCancelar;
+    @FXML
     private Button btGuardar;
 
     @FXML
@@ -95,17 +97,11 @@ public class HelloController {
 
         tableClientes.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldValue, newValue) -> llenarCampos(newValue));
-        txNombres.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
+        txNombres.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         txApellidos.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
-        txNDocumento.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+        txNDocumento.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
         txDireccion.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         txEmail.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
-    }
-
-
-    public void onCancelarClick() {
-        limpiarCampos();
-        tableClientes.getSelectionModel().clearSelection();
     }
 
     private void mostrarMensaje(String mensaje) {
@@ -157,12 +153,16 @@ public class HelloController {
             INSTANCE.getBanco().adicionarPersona(cliente);
             llenarTabla(INSTANCE.getBanco().buscar(null,null,null,null,null));
             limpiarCampos();
-            mostrarInformacion("La persona fue aceptada en el bus");
+            mostrarInformacion("La persona fue aceptada en el Banco");
         } catch (Exception e) {
             mostrarMensaje(e.getMessage());
         }
     }
-
+    @FXML
+    void cancelarSeleccionAction(ActionEvent event) {
+        limpiarCampos();
+        tableClientes.getSelectionModel().clearSelection();
+    }
     @FXML
     void actualizarClienteAction(ActionEvent event) {
 
@@ -170,8 +170,15 @@ public class HelloController {
 
     @FXML
     void eliminarClienteAction(ActionEvent event) {
-
+        try {
+            INSTANCE.getBanco().removerPersona(txNDocumento.getText());
+            llenarTabla(INSTANCE.getBanco().buscar(null,null,null,null,null));
+            limpiarCampos();
+            mostrarInformacion("La persona fue retirada del banco");
+        } catch (Exception e) {
+            mostrarMensaje(e.getMessage());
+        }
+    }
     }
 
 
-}
