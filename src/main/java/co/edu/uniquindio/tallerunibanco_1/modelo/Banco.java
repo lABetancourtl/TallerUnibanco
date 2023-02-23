@@ -46,16 +46,16 @@ public class Banco {
         listaClientes.remove(cliente.get());
     }
 
-    public List<Cliente> buscar(String nombre, String apellido, String cedula, String direccion, String email){
-        return listaClientes.stream()
-                .filter(ClienteUtil.buscarPorTodo(nombre, apellido, cedula, direccion, email))
-                .collect(Collectors.toUnmodifiableList());
-    }
-
     public Optional<Cliente> buscarPersonaByNumeroIdentificacion(String cedula) {
         return listaClientes.stream()
                 .filter(ClienteUtil.buscarPorNumeroIdentificacion(cedula))
                 .findFirst();
+    }
+
+    public List<Cliente> buscar(String nombre, String apellido, String cedula, String direccion, String email){
+        return listaClientes.stream()
+                .filter(ClienteUtil.buscarPorTodo(nombre, apellido, cedula, direccion, email))
+                .collect(Collectors.toUnmodifiableList());
     }
 
     //getters and setters
@@ -107,7 +107,5 @@ public class Banco {
         this.listaClientes = listaClientes;
     }
 
-    private void inicializarDatos() {
 
-    }
 }
