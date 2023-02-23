@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="267b9174-ec63-4cd9-8b1a-459d214ec1ad" name="Changes" comment="se confirma que el nuevo repositorio corr con los mismos archivos del repositorios eliminado">
+    <list default="true" id="267b9174-ec63-4cd9-8b1a-459d214ec1ad" name="Changes" comment="llenando tabla de clientes con base a ejemplos del semestre anterior">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/tallerunibanco_1/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/tallerunibanco_1/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/tallerunibanco_1/controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/tallerunibanco_1/controllers/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/tallerunibanco_1/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/tallerunibanco_1/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +41,40 @@
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Universidad_Anderson\programacion_Nocturna\TallerUniBanco\src\main\resources\co\edu\uniquindio\tallerunibanco_1" />
+      <recent name="C:\Universidad_Anderson\programacion_Nocturna\TallerUniBanco\src\main\java\co\edu\uniquindio\tallerunibanco_1\modelo" />
+      <recent name="C:\Universidad_Anderson\programacion_Nocturna\TallerUniBanco\src\main\resources" />
+      <recent name="C:\Universidad_Anderson\programacion_Nocturna\TallerUniBanco\src\main\java\co\edu\uniquindio\tallerunibanco_1\exceptions" />
+      <recent name="C:\Universidad_Anderson\programacion_Nocturna\TallerUniBanco\src\main\java\co\edu\uniquindio\tallerunibanco_1\utils" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="co.edu.uniquindio.tallerunibanco_1.exceptions" />
+      <recent name="co.edu.uniquindio.tallerunibanco_1.controllers" />
+      <recent name="co.edu.uniquindio.tallerunibanco_1.utils" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.tallerunibanco_1.HelloApplication" />
+      <module name="TallerUniBanco_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquindio.tallerunibanco_1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -61,28 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677093820681</updated>
     </task>
-    <task id="LOCAL-00003" summary="se crea un nuevo respositorio con las mismas carpetas, el anterior dejo de funcionar y no encontramos solucion">
-      <created>1677094518235</created>
+    <task id="LOCAL-00003" summary="llenando tabla de clientes con base a ejemplos del semestre anterior">
+      <created>1677132736661</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1677094518235</updated>
+      <updated>1677132736661</updated>
     </task>
-    <task id="LOCAL-00004" summary="se confirma que el nuevo repositorio corr con los mismos archivos del repositorios eliminado">
-      <created>1677095026774</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1677095026774</updated>
-    </task>
-    <task id="LOCAL-00005" summary="se confirma que el nuevo repositorio corr con los mismos archivos del repositorios eliminado">
-      <created>1677096289266</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1677096289266</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,8 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="se crea un nuevo respositorio con las mismas carpetas, el anterior dejo de funcionar y no encontramos solucion" />
-    <MESSAGE value="Se agregaron los id y los onAction" />
-    <MESSAGE value="se confirma que el nuevo repositorio corr con los mismos archivos del repositorios eliminado" />
-    <option name="LAST_COMMIT_MESSAGE" value="se confirma que el nuevo repositorio corr con los mismos archivos del repositorios eliminado" />
+    <MESSAGE value="llenando tabla de clientes con base a ejemplos del semestre anterior" />
+    <option name="LAST_COMMIT_MESSAGE" value="llenando tabla de clientes con base a ejemplos del semestre anterior" />
   </component>
 </project>
