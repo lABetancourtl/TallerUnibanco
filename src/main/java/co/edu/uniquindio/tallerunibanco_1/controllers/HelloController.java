@@ -17,11 +17,7 @@ import static co.edu.uniquindio.tallerunibanco_1.controllers.AppController.INSTA
 
 public class HelloController {
 
-    @FXML
-    private ResourceBundle resources;
 
-    @FXML
-    private URL location;
 
     @FXML
     private TableColumn<Cliente, String> columDireccion;
@@ -32,28 +28,13 @@ public class HelloController {
     @FXML
     private TableColumn<Cliente, String> columApellidos;
 
-    @FXML
-    private TableColumn<Cliente, String> columNCuenta;
-
-    @FXML
-    private TableColumn<Cliente, String> columTipoCuenta;
 
     @FXML
     private TextField txNDocumento;
 
-    @FXML
-    private TableColumn<Cliente, String> columTipoDocumento;
 
     @FXML
     private TextField txNombres;
-
-    @FXML
-    private Button btActualizar;
-
-    @FXML
-    private Button btCancelar;
-    @FXML
-    private Button btGuardar;
 
     @FXML
     private TableColumn<Cliente, String> columEmail;
@@ -64,14 +45,12 @@ public class HelloController {
     @FXML
     private TableColumn<Cliente, String> columNombres;
 
-    @FXML
-    private ComboBox<?> cbTipoDocumento;
 
     @FXML
     private TableView<Cliente> tableClientes;
 
     @FXML
-    private Button btNuevo;
+    private Button btBuscar;
 
     @FXML
     private TextField txDireccion;
@@ -79,8 +58,6 @@ public class HelloController {
     @FXML
     private TableColumn<Cliente, String> columNDocumento;
 
-    @FXML
-    private TextField txNCuenta;
 
     @FXML
     private Button btEliminar;
@@ -104,6 +81,63 @@ public class HelloController {
         txEmail.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
     }
 
+    public void guardarClienteAction(ActionEvent event) {
+        try {
+            Cliente cliente = Cliente.of(txNombres.getText(), txApellidos.getText(),txNDocumento.getText(), txDireccion.getText(),
+                    txEmail.getText());
+            INSTANCE.getBanco().adicionarPersona(cliente);
+            llenarTabla(INSTANCE.getBanco().buscar(null,null,null,null,null));
+            limpiarCampos();
+            mostrarInformacion("La persona fue aceptada en el Banco");
+        } catch (Exception e) {
+            mostrarMensaje(e.getMessage());
+        }
+    }
+    public void cancelarSeleccionAction() {
+        limpiarCampos();
+        tableClientes.getSelectionModel().clearSelection();
+    }
+
+    public void eliminarClienteAction() {
+        try {
+            INSTANCE.getBanco().removerPersona(txNDocumento.getText());
+            llenarTabla(INSTANCE.getBanco().buscar(null,null,null,null,null));
+            limpiarCampos();
+            mostrarInformacion("La persona fue retirada del banco");
+        } catch (Exception e) {
+            mostrarMensaje(e.getMessage());
+        }
+    }
+
+    public void buscarClienteAction() {
+        llenarTabla(
+                INSTANCE.getBanco().buscar(txNombres.getText(), txApellidos.getText(), txNDocumento.getText(), txDireccion.getText(),txEmail.getText())
+        );
+
+    }
+    private void llenarCampos(Cliente cliente) {
+        if (cliente != null) {
+            txNombres.setText(cliente.getNombre());
+            txApellidos.setText(cliente.getApellido());
+            txNDocumento.setText(cliente.getCedula());
+            txDireccion.setText(cliente.getDireccion());
+            txEmail.setText(cliente.getEmail());
+        }
+    }
+
+    private void limpiarCampos() {
+        txApellidos.setText("");
+        txNombres.setText("");
+        txEmail.setText("");
+        txDireccion.setText("");
+        txNDocumento.setText("");
+    }
+
+    private void llenarTabla(List<Cliente> listaClientes) {
+        tableClientes.setItems(FXCollections.observableArrayList(listaClientes));
+        tableClientes.refresh();
+    }
+
     private void mostrarMensaje(String mensaje) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
@@ -118,67 +152,18 @@ public class HelloController {
         alert.showAndWait();
     }
 
-    private void limpiarCampos() {
-        txApellidos.setText("");
-        txNombres.setText("");
-        txEmail.setText("");
-        txDireccion.setText("");
-        txNDocumento.setText("");
-    }
 
-    private void llenarCampos(Cliente ListaClientes) {
-        if (ListaClientes != null) {
-            txNombres.setText(ListaClientes.getNombre());
-            txApellidos.setText(ListaClientes.getApellido());
-            txNDocumento.setText(ListaClientes.getCedula());
-            txDireccion.setText(ListaClientes.getDireccion());
-            txEmail.setText(ListaClientes.getEmail());
-        }
-    }
-
-    private void llenarTabla(List<Cliente> ListaClientes) {
-        tableClientes.setItems(FXCollections.observableArrayList(ListaClientes));
-        tableClientes.refresh();
-    }
-    @FXML
-    void nuevoClienteAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void guardarClienteAction(ActionEvent event) {
-        try {
-            Cliente cliente = Cliente.of(txNDocumento.getText(), txNombres.getText(), txApellidos.getText(), txDireccion.getText(),
-                    txEmail.getText());
-            INSTANCE.getBanco().adicionarPersona(cliente);
-            llenarTabla(INSTANCE.getBanco().buscar(null,null,null,null,null));
-            limpiarCampos();
-            mostrarInformacion("La persona fue aceptada en el Banco");
-        } catch (Exception e) {
-            mostrarMensaje(e.getMessage());
-        }
-    }
-    @FXML
-    void cancelarSeleccionAction(ActionEvent event) {
-        limpiarCampos();
-        tableClientes.getSelectionModel().clearSelection();
-    }
     @FXML
     void actualizarClienteAction(ActionEvent event) {
 
     }
 
-    @FXML
-    void eliminarClienteAction(ActionEvent event) {
-        try {
-            INSTANCE.getBanco().removerPersona(txNDocumento.getText());
-            llenarTabla(INSTANCE.getBanco().buscar(null,null,null,null,null));
-            limpiarCampos();
-            mostrarInformacion("La persona fue retirada del banco");
-        } catch (Exception e) {
-            mostrarMensaje(e.getMessage());
-        }
-    }
+
+
+
+
+
+
     }
 
 
