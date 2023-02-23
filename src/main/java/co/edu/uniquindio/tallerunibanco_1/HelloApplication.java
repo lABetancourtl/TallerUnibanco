@@ -1,5 +1,7 @@
 package co.edu.uniquindio.tallerunibanco_1;
 
+import co.edu.uniquindio.tallerunibanco_1.controllers.HelloController;
+import co.edu.uniquindio.tallerunibanco_1.modelo.Banco;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +15,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(root);
+
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
